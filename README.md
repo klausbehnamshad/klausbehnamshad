@@ -19,7 +19,7 @@ University of Luxembourg · [ORCID](https://orcid.org/0000-0002-3601-9024) · [W
 **[DigQDA](https://github.com/klausbehnamshad/DigQDA)** — evidence-bound qualitative data analysis with local language models. Versioned method contracts, source-near coding prompts with machine-readable JSON schemas, deterministic source-unit segmentation, quote and locator validation, fail-closed conformance suite.
 `pre-release` · MIT
 
-**[AegisQDA](https://github.com/klausbehnamshad/AegisQDA)** — local-first, fail-closed privacy gateway for interview data. Presidio-backed PII recognition, mandatory human review, typed document-local surrogates, second verification scan; data is released downstream only after sign-off.
+**[AegisQDA](https://github.com/klausbehnamshad/AegisQDA)** — local-first, fail-closed privacy gateway in front of DigQDA. Presidio-backed PII recognition, mandatory signed human review, typed document-local surrogates, second verification scan; data is released downstream only after sign-off. German, English, French; Luxembourgish optional.
 `MVP` · MIT
 
 **[Relational Justice Analysis](https://github.com/klausbehnamshad/relational-justice-analysis)** — rule-based, fully traceable annotation framework for qualitative text data, with indicators for German, English and French.

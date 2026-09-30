@@ -1,52 +1,49 @@
 # Klaus Behnam Shad
 
-**AI Architectures · Research Infrastructure · Privacy by Design · Qualitative Data**
+**Digital Humanities · Research Software · Oral History · Digital Editions**
 
-I build digital infrastructure for research with sensitive data: AI-assisted analysis that runs on local models, anonymisation that fails closed rather than open, and metadata models that keep interview data usable across institutions. Local-first, GDPR-compliant, reproducible.
+I am a postdoctoral researcher and Oral History Coordinator at the Centre for Contemporary and Digital History (C²DH), University of Luxembourg, and Principal Investigator of LIFE. I design research software for digital editions, oral history and interview-based qualitative research. Across these projects, computational proposals, source references and human decisions are documented according to each tool's scope.
 
-University of Luxembourg · [ORCID](https://orcid.org/0000-0002-3601-9024) · [Website](https://behnamshad.com) · [Zenodo](https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Behnam%20Shad%2C%20Klaus%22)
-
----
-
-## What I build
-
-**[DINOH](https://github.com/klausbehnamshad/DINOH)** — a digital, AI-assisted infrastructure for oral history. Multilingual benchmark corpus and evaluation suite: synthetic gold standard across seven languages, machine-readable schemas, WebVTT and OHMS export. Pipelines can be measured and compared before any real material is touched.
-`v1.0.0` · MIT · [10.5281/zenodo.21273366](https://doi.org/10.5281/zenodo.21273366)
-
-**[AegisQDA](https://github.com/klausbehnamshad/AegisQDA)** — local-first, fail-closed privacy gateway in front of DigQDA. Presidio-backed PII recognition, mandatory signed human review, typed document-local surrogates, second verification scan; data is released downstream only after sign-off. German, English, French; Luxembourgish optional.
-`MVP` · MIT
-
-**[DigQDA](https://github.com/klausbehnamshad/DigQDA)** — evidence-bound qualitative data analysis with local language models. Versioned method contracts, source-near coding prompts with machine-readable JSON schemas, deterministic source-unit segmentation, quote and locator validation, fail-closed conformance suite.
-`pre-release (v0.4)` · MIT
-
-**[IMM-Core](https://github.com/klausbehnamshad/imm-core)** — minimal metadata model for interview-based research. Two-layer architecture (13 core fields, 7 mandatory, plus extensible implementation profiles), DCTAP-based, with crosswalks to Dublin Core, schema.org/Dataset, REFI-QDA/QDPX and CMDI.
-`v1.0` · CC BY 4.0 · [10.5281/zenodo.20507328](https://doi.org/10.5281/zenodo.20507328)
-
-**[Relational Justice Analysis](https://github.com/klausbehnamshad/relational-justice-analysis)** — rule-based, fully traceable annotation framework for qualitative text data, with indicators for German, English and French. Every annotation can be traced back to the rule that produced it.
-`v2.0.0` · MIT · [10.5281/zenodo.18640259](https://doi.org/10.5281/zenodo.18640259)
-
-Released versions are openly licensed and archived on Zenodo with persistent identifiers. The DOIs above are concept DOIs — they always resolve to the latest release.
+[Website](https://behnamshad.com/infrastructure) · [ORCID](https://orcid.org/0000-0002-3601-9024) · [Zenodo](https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Behnam%20Shad%2C%20Klaus%22) · [Teaching](https://behnamshad.com/teaching)
 
 ---
 
-## How these systems are built
+## Digital editions and linked data
 
-**Local-first** — processing happens inside the institution's own infrastructure. Sensitive data does not leave it, by architecture rather than by policy.
+**[TEI CRM Bridge](https://github.com/klausbehnamshad/tei-crm-bridge)** · research prototype  
+Enriches TEI P5 letters with persons, places and organisations. It writes a new TEI file while preserving the reading text and existing markup of the input. Automatically recognised names remain documented candidates. A separate reviewed RDF graph records editorial decisions; accepted candidates additionally receive CIDOC CRM classifications and document references. W3C Web Annotation links mentions to text locations, and PROV-O records their provenance. An evaluation of version 0.2 used 40 letters from the Arthur Schnitzler correspondence edition. The current development branch also contains a CMIF export for correspondence metadata; it does not submit records to correspSearch.
 
-**Fail-closed** — where a system is unsure, it stops and asks. Silent guessing is the failure mode that makes automation unusable in this field.
+## Oral history infrastructure
 
-**Traceable** — every result resolves to a location in the source and to the rule or method contract that produced it.
+**[DINOH](https://github.com/klausbehnamshad/DINOH)** · umbrella project  
+Connects a transcript workflow, a metadata model and shared methods. Its evaluation component provides 28 synthetic interview records in seven languages and a scoring procedure. The model backend remains a placeholder, so the published outputs are not model-performance results.
 
-**Interoperable** — open standards and documented crosswalks instead of proprietary formats. The data has to outlive the tool.
+**[OHPIPE](https://github.com/klausbehnamshad/ohpipe)** · experimental public preview  
+Versions transcripts and separates descriptive proposals from human decisions. A September 2026 pilot took one transcript through reviewed descriptive proposals; it did not establish export readiness or general model quality.
+
+**[diar2](https://github.com/klausbehnamshad/diar2)** · local transcription tool  
+Produces speaker-attributed transcripts of two-person interviews on Apple Silicon Macs. After setup, it runs offline; its self-test repeats the pipeline with the network blocked.
+
+**[IMM-Core](https://github.com/klausbehnamshad/imm-core)** · published metadata model  
+Defines a minimal core for interview-based qualitative research across disciplines: thirteen fields, seven required, specified in DCTAP with documented crosswalks.
+
+## Qualitative analysis
+
+**[AegisQDA](https://github.com/klausbehnamshad/AegisQDA)** · MVP for synthetic inputs  
+A local privacy gateway before DigQDA. It detects identifiers, requires complete human review, replaces confirmed identifiers with typed surrogates and performs a second scan. Authorisation for real data is not enabled.
+
+**[DigQDA](https://github.com/klausbehnamshad/DigQDA)** · pre-release  
+Provides versioned method contracts and a local reference runner for source-bound coding proposals. Its conformance checks reject quotations or locators that cannot be resolved in the source. The consuming research application remains responsible for authorisation and review.
+
+**[Relational Justice Analysis](https://github.com/klausbehnamshad/relational-justice-analysis)** · published analytical framework  
+Makes its theory-guided coding rules and later revisions inspectable. An exploratory reliability study compares human and LLM coders and documents limits, including disagreement about which justice dimensions to assign.
+
+Each repository documents its versions, tests and limitations; archived releases are available through Zenodo where applicable.
 
 ---
 
-## Conceptual approach
+## Background
 
-Rather than automating interpretation, I design analytical architectures that preserve theoretical clarity, methodological transparency, and structural accountability. My broader aim is to operationalize sociological reasoning without reducing it to black-box computation.
+I am a social and cultural anthropologist (Dr. phil., Freie Universität Berlin). My research examines human differentiation, migration, citizenship, emotion, AI and society, and oral history. It draws on a socio-cybernetic understanding of society as a recursive system of distinctions reproduced through feedback, institutional routines and cognitive stabilisation. In the software, theoretical assumptions and initial analytical categories are made explicit, revisions are documented, and interpretation remains with the researcher.
 
-The work rests on a socio-cybernetic understanding of society as a recursive system of distinctions — reproduced through feedback, institutional routinisation and cognitive stabilisation. From this follows a methodological commitment: analytical categories are not inferred from the data but theoretically grounded and made explicit.
-
-Background in social and cultural anthropology; empirical work on social differentiation, migration, citizenship and oral history.
-
----
+I have taught at Freie Universität Berlin and the University of Luxembourg. Recent open-access books: *[The Sorting of Humanity](https://doi.org/10.14361/9783839476130)* and *[Die Sortierung der Menschheit](https://doi.org/10.14361/9783839475973)* (transcript, 2026).

@@ -22,7 +22,7 @@ Connects a transcript workflow, a metadata model and shared methods. Its evaluat
 Versions transcripts and separates descriptive proposals from human decisions. A September 2026 pilot took one transcript through reviewed descriptive proposals; it did not establish export readiness or general model quality.
 
 **[diar2](https://github.com/klausbehnamshad/diar2)** · local transcription tool  
-Produces speaker-attributed transcripts of two-person interviews on Apple Silicon Macs. After setup, it runs offline; its self-test repeats the pipeline with the network blocked.
+Creates draft speaker-attributed transcripts and a listening review list for two-person interviews on Apple Silicon Macs. It runs offline by default after model setup; accuracy has so far been measured only on synthetic speech.
 
 **[IMM-Core](https://github.com/klausbehnamshad/imm-core)** · published metadata model  
 Defines a minimal core for interview-based qualitative research across disciplines: thirteen fields, seven required, specified in DCTAP with documented crosswalks.
